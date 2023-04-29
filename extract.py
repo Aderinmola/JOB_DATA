@@ -1,15 +1,13 @@
-import pandas as pd
-from dotenv import dotenv_values
-
 import requests
-
 import json
 
+from dotenv import dotenv_values
 
-# Database credentials
+
+# API credentials
 config = dotenv_values()
 
-api_key = config.get('X-RapidAPI-Key')
+api_key = config.get('RapidAPI_Key')
 
 def api_extract():
 # Data Engineer and Data Analyst jobs posted in either UK, Cannada or the US.
