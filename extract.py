@@ -9,16 +9,13 @@ config = dotenv_values()
 
 api_key = config.get('RapidAPI_Key')
 
-def api_extract():
+def api_extract(file_name):
 # Data Engineer and Data Analyst jobs posted in either UK, Cannada or the US.
     url = "https://jsearch.p.rapidapi.com/search"
-
-
     headers = {
-        "X-RapidAPI-Key": {api_key},
+        "X-RapidAPI-Key": api_key,
         "X-RapidAPI-Host": "jsearch.p.rapidapi.com"
     }
-
     job_titles_and_location = [
         "Data Engineer in USA",
         "Data Engineer in UK", 
@@ -40,9 +37,7 @@ def api_extract():
 
     # Serializing json
     json_object = json.dumps(acc_data, indent=4)
-
-    with open("job_data.json", "w") as f:
+    
+    with open(file_name, "w") as f:
         f.write(json_object)
     print("Data written into a file successfully")
-
-api_extract()

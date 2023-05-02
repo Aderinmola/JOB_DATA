@@ -8,7 +8,6 @@ AWS_ACCESS_KEY = config.get('AWS_ACCESS_KEY')
 AWS_SECRET_KEY = config.get('AWS_SECRET_KEY')
 AWS_REGION = config.get('AWS_REGION')
 
-
 s3_client = boto3.client(
     "s3",
     aws_access_key_id=AWS_ACCESS_KEY,
